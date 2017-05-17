@@ -1,28 +1,19 @@
-<div class="container">
-	<h1>Gallery</h1>
-</div>
-<div class="container">
+<div class="container recent-installations">
 	<!-- if galleries -->
 	{{#if galleries}}
 		{{#each galleries}}
-		<h2>{{name}}
-			<div class="pull-right text-muted">19th May 2014</div>
-		</h2>
-		<div class="row gallery-images">
-				{{#if heroImage}}
-				<div class="col-sm-4 col-md-4 gallery-image">
-					<img src="{{cloudinaryUrl heroImage width='680' height='680'}}" class="img-rounded">
-				</div>
-				{{/if}}
-				<div class="col-sm-8 col-md-8">
-					<div class="row">
-						{{#each images}}
-						<div class="col-xs-4 col-sm-4 col-md-3 gallery-image">
-							<img src="{{cloudinaryUrl width='300' height='300'}}" class="img-rounded">
-						</div>
-						{{/each}}
-					</div>
-				</div>
+    <div class="container">
+      <h1>{{name}}</h1>
+      <p>{{description}}</p>
+    </div>
+		<div class="gallery-wrapper">
+      {{#each images}}
+      <div class="thumbnail-wrapper">
+        <a href="{{cloudinaryUrl width='800' height='800'}}" data-lightbox="installations">
+          <img src="{{cloudinaryUrl width='150' height='150'}}" alt="Hunter Slimline 8kw double door">
+        </a>
+      </div>
+      {{/each}}
 		</div>
 		{{/each}}
 	{{else}}
